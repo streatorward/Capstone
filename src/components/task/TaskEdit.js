@@ -4,15 +4,6 @@ import React, { Component } from "react"
 
 
 export default class TaskEdit extends Component {
-    // componentWillMount() {
-    //     const task = this.props.tasks.find(a => a.id === parseInt(this.props.match.params.task.id, 0))
-    //     this.setState(task);
-    // }
-    // componentWillUnmount() {
-    //     const task = this.props.tasks.find(a => a.id === parseInt(this.props.match.params.task.id, 0))
-    //     this.setState(task);
-    // }
-
     state = {
         name: "",
         detail: "",
