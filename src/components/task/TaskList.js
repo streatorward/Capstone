@@ -31,7 +31,8 @@ export default class TaskList extends Component {
                                         <Link className="nav-link" to={`/tasks/edit/${task.id}`}>Edit</Link>
                                         <button type="button" className="btn btn-success"
                                             onClick={() => this.props.deleteTask(task.id, "tasks")}
-                                            >Delete</button>
+                                        >Delete</button>
+                                        <input onClick={() => this.props.patch("tasks", { completed: true }, this.props.task.id)} className="taskCheckbox" name="completed" type="checkbox" />
                                     </h5>
                                 </div>
                             </div>

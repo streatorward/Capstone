@@ -1,14 +1,16 @@
 {
   "tasks": [
     {
-      "taskName": "test",
-      "taskDetail": "test",
+      "taskName": "test 1",
+      "taskDetail": "test 1",
+      "taskRecurring": "weekly",
       "id": 1
     },
     {
-      "taskName": "test 1",
-      "taskDetail": "test 1",
-      "id": 4
+      "taskName": "test 2",
+      "taskDetail": "test 2",
+      "taskRecurring": "weekly",
+      "id": 2
     }
   ],
   "users": [
@@ -21,6 +23,21 @@
       "inputEmail": "test",
       "inputPassword": "test",
       "id": 2
+    },
+    {
+      "inputEmail": "hello@gmail.com",
+      "inputPassword": "123",
+      "id": 3
+    },
+    {
+      "inputEmail": "test1",
+      "inputPassword": "test1",
+      "id": 4
+    },
+    {
+      "inputEmail": "test2",
+      "inputPassword": "test2",
+      "id": 5
     }
   ]
 }

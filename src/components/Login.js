@@ -28,14 +28,14 @@ export default class Login extends Component {
         let password = this.state.password;
         DataManager.getAll("users")
             .then(users => {
-                let loginUser = users.find(u => u.inputEmail === email && u.inputPassword === password)
-                if(loginUser){
+                let activeUser = users.find(u => u.inputEmail === email && u.inputPassword === password)
+                if(activeUser){
                     sessionStorage.setItem(
                         "activeUser",
                         JSON.stringify({
                             email: this.state.email,
                             password: this.state.password,
-                            id: loginUser.id
+                            id: activeUser.id
                         })
                     )
                     this.props.history.push("/tasks")
@@ -50,6 +50,7 @@ export default class Login extends Component {
         const user = {
             inputEmail: this.state.email,
             inputPassword: this.state.password,
+            userId: this.props.activeUser.id
         }
 
         this.props.addUser(user, "users").then(() => this.props.history.push("/"))

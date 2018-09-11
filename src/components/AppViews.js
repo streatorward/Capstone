@@ -26,7 +26,7 @@ export default class AppViews extends Component {
     addTask = (task, link) => DataManager.post(task, link)
         .then(() => DataManager.getAll("tasks"))
         .then(tasks => this.setState({
-            tasks: tasks
+            tasks: tasks,
         }))
     editTask = (task, id, link) => DataManager.put(task, id, link)
         .then(() => DataManager.getAll("tasks"))
