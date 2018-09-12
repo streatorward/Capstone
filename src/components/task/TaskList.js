@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
+import TaskCard from './TaskCard'
 // import "./Task.css"
 
 
 export default class TaskList extends Component {
+
     render() {
+        const filteredTasks = this.props.tasks.filter(task => task.completed !== true)
         return (
 
             <React.Fragment>
@@ -17,28 +20,12 @@ export default class TaskList extends Component {
                         }>
                         Add task
                     </button>
-                </div>
-
-                <section className="tasks">
                     {
-                        this.props.tasks.map(task =>
-                            <div key={task.id} className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        <p>{task.taskName}</p>
-                                        <p>{task.taskDetail}</p>
-                                        <p>{task.taskDate}</p>
-                                        <Link className="nav-link" to={`/tasks/edit/${task.id}`}>Edit</Link>
-                                        <button type="button" className="btn btn-success"
-                                            onClick={() => this.props.deleteTask(task.id, "tasks")}
-                                        >Delete</button>
-                                        <input onClick={() => this.props.patch("tasks", { completed: true }, this.props.task.id)} className="taskCheckbox" name="completed" type="checkbox" />
-                                    </h5>
-                                </div>
-                            </div>
-                        )
-                    }
-                </section>
+                            filteredTasks.map(task =>
+                                <TaskCard key={task.id} task={task} {...this.props}/>
+                            )
+                        }
+                </div>
             </React.Fragment>
         )
     }

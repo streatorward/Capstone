@@ -7,14 +7,15 @@ export default class TaskForm extends Component {
     // Set initial state
     
     constructor(props) {
-        // let user = JSON.parse(sessionStorage.getItem("activeUser"))[0]
+        let user = JSON.parse(sessionStorage.getItem("activeUser"))
         super(props);
         
         this.state = {
             name: "",
             detail: "",
             recurring: "",
-            // user: "",
+            user: user,
+            completed: false
         }
     }
     // Update state whenever an input field is edited
@@ -35,7 +36,8 @@ export default class TaskForm extends Component {
             taskName: this.state.name,
             taskDetail: this.state.detail,
             taskRecurring: this.state.recurring,
-            // userId: this.props.activeUser.id
+            activeUser: this.props.user,
+            completed: this.state.completed
         }
 
         // Create the task and redirect user to task list
@@ -72,7 +74,7 @@ export default class TaskForm extends Component {
                             <option value="monthly">Monthly</option>
                         </select>
                     </div>
-                    <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Add</button>
+                    <button type="button" onClick={this.constructNewTask} className="btn btn-primary">Add</button>
                 </form>
             </React.Fragment>
         )
