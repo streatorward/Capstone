@@ -45,9 +45,21 @@ export default Object.create(null, {
             .then(() => this.getAll(link))
         }
     },
+    patch: {
+        value: function (link, tasks, id) {
+            return fetch(`${remoteURL}/${link}/${id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(tasks)
+            }).then(e => e.json())
+            .then(() => this.getAll(link))
+        }
+    },
     findUser: {
         value: (email, password) => {
-            return fetch(`http://localhost:5002/users?inputEmail=${email}&inputPassword=${password}`)
+            return fetch(`http://localhost:5003/users?inputEmail=${email}&inputPassword=${password}`)
                 .then(response => response.json())
         }
     }

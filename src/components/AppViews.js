@@ -7,6 +7,7 @@ import DataManager from '../data/DataManager'
 import TaskForm from './task/TaskForm'
 import TaskList from './task/TaskList'
 import TaskEdit from './task/TaskEdit'
+import CompletedTask from './task/CompletedTask'
 
 
 export default class AppViews extends Component {
@@ -38,6 +39,11 @@ export default class AppViews extends Component {
         .then(tasks => this.setState({
             tasks: tasks
         }))
+    patch = (link, tasks, id) => DataManager.patch(link, tasks, id)
+        .then(() => DataManager.getAll("tasks"))
+        .then(tasks => this.setState({
+            tasks: tasks
+        }))
 
 
     componentDidMount() {
@@ -61,6 +67,17 @@ export default class AppViews extends Component {
                             return <TaskList {...props}
                                 tasks={this.state.tasks}
                                 deleteTask={this.deleteTask}
+                                patch={this.patch}
+                            />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
+                    <Route exact path="/completed" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <CompletedTask {...props}
+                                tasks={this.state.tasks}
+                                deleteTask={this.deleteTask}
                             />
                         } else {
                             return <Redirect to="/login" />
@@ -78,5 +95,4 @@ export default class AppViews extends Component {
             </React.Fragment>
         )
     }
-
 }

@@ -5,14 +5,17 @@ import React, { Component } from "react"
 
 export default class TaskForm extends Component {
     // Set initial state
+    
     constructor(props) {
+        let user = JSON.parse(sessionStorage.getItem("activeUser"))
         super(props);
-
+        
         this.state = {
             name: "",
             detail: "",
             recurring: "",
-            userId: "",
+            user: user,
+            completed: false
         }
     }
     // Update state whenever an input field is edited
@@ -33,7 +36,8 @@ export default class TaskForm extends Component {
             taskName: this.state.name,
             taskDetail: this.state.detail,
             taskRecurring: this.state.recurring,
-            userId: this.props.activeUser
+            activeUser: this.props.user,
+            completed: this.state.completed
         }
 
         // Create the task and redirect user to task list
@@ -47,7 +51,7 @@ export default class TaskForm extends Component {
                 <form className="taskForm">
                     <div className="form-group">
                         <label htmlFor="taskName">Task </label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="name"
@@ -55,7 +59,7 @@ export default class TaskForm extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="eventDetail">Details</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="detail"
@@ -70,7 +74,7 @@ export default class TaskForm extends Component {
                             <option value="monthly">Monthly</option>
                         </select>
                     </div>
-                    <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Add</button>
+                    <button type="button" onClick={this.constructNewTask} className="btn btn-primary">Add</button>
                 </form>
             </React.Fragment>
         )
