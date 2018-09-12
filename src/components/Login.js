@@ -35,7 +35,6 @@ export default class Login extends Component {
                         JSON.stringify({
                             email: this.state.email,
                             password: this.state.password,
-                            id: activeUser.id
                         })
                     )
                     this.props.history.push("/tasks")
@@ -50,7 +49,6 @@ export default class Login extends Component {
         const user = {
             inputEmail: this.state.email,
             inputPassword: this.state.password,
-            userId: this.props.activeUser.id
         }
 
         this.props.addUser(user, "users").then(() => this.props.history.push("/"))

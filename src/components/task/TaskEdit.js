@@ -7,6 +7,7 @@ export default class TaskEdit extends Component {
     state = {
         name: "",
         detail: "",
+        recurring: "",
     }
 
     // Update state whenever an input field is edited
@@ -25,6 +26,7 @@ export default class TaskEdit extends Component {
         const task = {
             taskName: this.state.name,
             taskDetail: this.state.detail,
+            taskRecurring: this.state.recurring,
         }
         const taskEditId = parseInt(this.props.match.params.taskId, 0)
         // Create the task and redirect user to task list
@@ -36,7 +38,7 @@ export default class TaskEdit extends Component {
                 <form className="TaskForm">
                     <div className="form-group">
                         <label htmlFor="taskName">Task name</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                                className="form-control"
                                onChange={this.handleFieldChange.bind(this)}
                                id="name"
@@ -45,11 +47,20 @@ export default class TaskEdit extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskDetail">Task Detail</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                                className="form-control"
                                onChange={this.handleFieldChange.bind(this)}
                                id="detail" placeholder="Task Detail"
                                defaultValue={this.state.taskDetail}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="taskRecurring">Recurring: </label>
+                        <select defaultValue="" onChange={this.handleFieldChange} id="recurring">
+                            <option value="">Select:</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
                     </div>
                     <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Submit</button>
                 </form>

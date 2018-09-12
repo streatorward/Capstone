@@ -5,14 +5,16 @@ import React, { Component } from "react"
 
 export default class TaskForm extends Component {
     // Set initial state
+    
     constructor(props) {
+        // let user = JSON.parse(sessionStorage.getItem("activeUser"))[0]
         super(props);
-
+        
         this.state = {
             name: "",
             detail: "",
             recurring: "",
-            userId: "",
+            // user: "",
         }
     }
     // Update state whenever an input field is edited
@@ -33,7 +35,7 @@ export default class TaskForm extends Component {
             taskName: this.state.name,
             taskDetail: this.state.detail,
             taskRecurring: this.state.recurring,
-            userId: this.props.activeUser
+            // userId: this.props.activeUser.id
         }
 
         // Create the task and redirect user to task list
@@ -47,7 +49,7 @@ export default class TaskForm extends Component {
                 <form className="taskForm">
                     <div className="form-group">
                         <label htmlFor="taskName">Task </label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="name"
@@ -55,7 +57,7 @@ export default class TaskForm extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="eventDetail">Details</label>
-                        <input type="text" required="true"
+                        <input type="text" required={true}
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="detail"

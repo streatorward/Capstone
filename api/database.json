@@ -1,9 +1,8 @@
 {
   "tasks": [
     {
-      "taskName": "test 1",
-      "taskDetail": "test 1",
-      "taskRecurring": "weekly",
+      "taskName": "Streator Ward",
+      "taskDetail": "test1",
       "id": 1
     },
     {
@@ -11,6 +10,12 @@
       "taskDetail": "test 2",
       "taskRecurring": "weekly",
       "id": 2
+    },
+    {
+      "taskName": "test 22",
+      "taskDetail": "test 4",
+      "taskRecurring": "monthly",
+      "id": 3
     }
   ],
   "users": [

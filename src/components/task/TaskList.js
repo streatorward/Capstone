@@ -25,7 +25,7 @@ export default class TaskList extends Component {
                             <div key={task.id} className="card">
                                 <div className="card-body">
                                     <h5 className="card-title">
-                                        <h2>{task.taskName}</h2>
+                                        <p>{task.taskName}</p>
                                         <p>{task.taskDetail}</p>
                                         <p>{task.taskDate}</p>
                                         <Link className="nav-link" to={`/tasks/edit/${task.id}`}>Edit</Link>
