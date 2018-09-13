@@ -2,8 +2,10 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
-
 class NavBar extends Component {
+    logout() {
+        sessionStorage.clear();
+    }
     render() {
         return (
             
@@ -14,6 +16,9 @@ class NavBar extends Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link text-success" to="/completed">Completed</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-success" to="/" onClick={this.logout}>Logout</Link>
                     </li>
                 </ul>
             </nav>

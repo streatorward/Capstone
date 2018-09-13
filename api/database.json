@@ -4,29 +4,36 @@
       "taskName": "test 1",
       "taskDetail": "test 1",
       "taskRecurring": "daily",
+      "activeUser": 1,
       "completed": false,
-      "id": 1
+      "id": 1,
+      "complete": true
     },
     {
       "taskName": "test 2",
       "taskDetail": "test 2",
-      "taskRecurring": "weekly",
+      "taskRecurring": "daily",
+      "activeUser": 1,
       "completed": false,
-      "id": 2
-    },
-    {
-      "taskName": "test 3",
-      "taskDetail": "test 3",
-      "taskRecurring": "monthly",
-      "completed": false,
-      "id": 3
+      "id": 2,
+      "complete": true
     }
   ],
   "users": [
     {
-      "inputEmail": "test",
-      "inputPassword": "test",
+      "email": "test",
+      "password": "test",
       "id": 1
+    },
+    {
+      "email": "hello@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "hello@gmail.com",
+      "password": "123",
+      "id": 3
     }
   ]
 }
