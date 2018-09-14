@@ -5,9 +5,20 @@ import React, { Component } from "react"
 export default class TaskCard extends Component {
 
     state = {
-        task: {},
-        edit: false,
-        // isToggleOn: true
+        task: {}
+
+    }
+
+    changeCompleted = () => { 
+    let complete = { complete: this.state.task.complete }
+    console.log(complete)
+        if (this.state.task.complete) {
+            complete = { complete: false }
+        } else {
+            complete = { complete: true }
+        }
+        console.log(complete)
+        this.props.patch("tasks", complete, this.props.task.id)
     }
 
     componentDidMount = () => {
@@ -20,17 +31,11 @@ export default class TaskCard extends Component {
         this.setState({ task })
     }
 
-    // handleClick() {
-    //     this.setState(state => ({
-    //       isToggleOn: !state.isToggleOn
-    //     }));
-    //   }
-
     render() {
         return (
-            <div key={this.props.task.id} className="taskCard">
+            <div key={this.state.task.id} className="taskCard">
                 <section className="tasks">
-                    <div key={this.props.task.id} className="card">
+                    <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">
                                 <p>{this.props.task.taskName}</p>
@@ -40,7 +45,8 @@ export default class TaskCard extends Component {
                                 <button type="button" className="btn btn-success"
                                     onClick={() => this.props.deleteTask(this.props.task.id, "tasks")}
                                 >Delete</button>
-                                <input onClick={() => this.props.patch("tasks", { completed: true }, this.props.task.id)} className="taskCheckbox" name="completed" type="checkbox" />
+                                    <input onClick={this.changeCompleted} className="taskCheckbox" name="complete" type="checkbox" />
+                          
                             </h5>
                         </div>
                     </div>

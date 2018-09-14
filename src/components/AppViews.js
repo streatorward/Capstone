@@ -17,7 +17,7 @@ export default class AppViews extends Component {
 
     state = {
         tasks: [],
-        users: []
+        users: [],
     }
 
     addUser = (user, link) => DataManager.post(user, link)
@@ -58,10 +58,15 @@ export default class AppViews extends Component {
             <React.Fragment>
                 <div className="viewArea">
 
-                    <Route path="/login" render={(props) => {
+                    <Route exact path="/" render={(props) => {
                         return <Login {...props}
                             addUser={this.addUser} />
                     }} />
+
+                    {/* <Route path="/login" render={(props) => {
+                        return <Login {...props}
+                            addUser={this.addUser} />
+                    }} /> */}
                     <Route exact path="/tasks" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <TaskList {...props}
@@ -78,16 +83,17 @@ export default class AppViews extends Component {
                             return <CompletedTask {...props}
                                 tasks={this.state.tasks}
                                 deleteTask={this.deleteTask}
+                                patch={this.patch}
                             />
                         } else {
                             return <Redirect to="/login" />
                         }
                     }} />
-                    <Route path="/tasks/new" render={(props) => {
+                    <Route exact path="/tasks/new" render={(props) => {
                         return <TaskForm {...props}
                             addTask={this.addTask} />
                     }} />
-                    <Route path="/tasks/edit/:taskId(\d+)" render={(props) => {
+                    <Route exact path="/tasks/edit/:taskId(\d+)" render={(props) => {
                         return <TaskEdit {...props}
                             editTask={this.editTask} />
                     }} />

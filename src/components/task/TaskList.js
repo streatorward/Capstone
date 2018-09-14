@@ -7,7 +7,7 @@ import TaskCard from './TaskCard'
 export default class TaskList extends Component {
 
     render() {
-        const filteredTasks = this.props.tasks.filter(task => task.completed !== true)
+        const filteredTasks = this.props.tasks.filter(task => task.complete !== true)
         return (
 
             <React.Fragment>

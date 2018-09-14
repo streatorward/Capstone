@@ -28,13 +28,14 @@ export default class Login extends Component {
         let password = this.state.password;
         DataManager.getAll("users")
             .then(users => {
-                let activeUser = users.find(u => u.inputEmail === email && u.inputPassword === password)
+                let activeUser = users.find(u => u.email === email && u.password === password)
                 if(activeUser){
                     sessionStorage.setItem(
                         "activeUser",
                         JSON.stringify({
                             email: this.state.email,
                             password: this.state.password,
+                            id: activeUser.id
                         })
                     )
                     this.props.history.push("/tasks")
@@ -47,8 +48,8 @@ export default class Login extends Component {
     constructNewUser = evt => {
         evt.preventDefault()
         const user = {
-            inputEmail: this.state.email,
-            inputPassword: this.state.password,
+            email: this.state.email,
+            password: this.state.password,
         }
 
         this.props.addUser(user, "users").then(() => this.props.history.push("/"))
@@ -59,14 +60,14 @@ export default class Login extends Component {
         return (
             <form onSubmit={this.handleLogin}>
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label htmlFor="inputEmail">
+                <label htmlFor="email">
                     Email address
                 </label>
                 <input onChange={this.handleFieldChange} type="email"
                     id="email"
                     placeholder="Email address"
                     required="" autoFocus="" />
-                <label htmlFor="inputPassword">
+                <label htmlFor="password">
                     Password
                 </label>
                 <input onChange={this.handleFieldChange} type="password"
@@ -83,3 +84,4 @@ export default class Login extends Component {
         )
     }
 }
+

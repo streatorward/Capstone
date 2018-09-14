@@ -7,14 +7,13 @@ export default class TaskForm extends Component {
     // Set initial state
     
     constructor(props) {
-        let user = JSON.parse(sessionStorage.getItem("activeUser"))
         super(props);
         
         this.state = {
             name: "",
             detail: "",
             recurring: "",
-            user: user,
+            // activeUser: "",
             completed: false
         }
     }
@@ -36,7 +35,7 @@ export default class TaskForm extends Component {
             taskName: this.state.name,
             taskDetail: this.state.detail,
             taskRecurring: this.state.recurring,
-            activeUser: this.props.user,
+            activeUser: JSON.parse(sessionStorage.getItem("activeUser")).id,
             completed: this.state.completed
         }
 
