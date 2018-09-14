@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DataManager from "../data/DataManager"
+import "./login.css"
 
 export default class Login extends Component {
 
@@ -29,7 +30,7 @@ export default class Login extends Component {
         DataManager.getAll("users")
             .then(users => {
                 let activeUser = users.find(u => u.email === email && u.password === password)
-                if(activeUser){
+                if (activeUser) {
                     sessionStorage.setItem(
                         "activeUser",
                         JSON.stringify({
@@ -58,29 +59,33 @@ export default class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <label htmlFor="email">
-                    Email address
+            <div class="loginForm">
+                <form onSubmit={this.handleLogin}>
+                    <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <label htmlFor="email">
+                        Email address
                 </label>
-                <input onChange={this.handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email address"
-                    required="" autoFocus="" />
-                <label htmlFor="password">
-                    Password
+                    <input onChange={this.handleFieldChange} type="email"
+                        id="email"
+                        placeholder="Email address"
+                        required="" autoFocus="" />
+                    <br />
+                    <label htmlFor="password">
+                        Password
                 </label>
-                <input onChange={this.handleFieldChange} type="password"
-                    id="password"
-                    placeholder="Password"
-                    required="" />
-                <button type="submit" onClick={this.constructNewUser}>
-                    Register
+                    <input onChange={this.handleFieldChange} type="password"
+                        id="password"
+                        placeholder="Password"
+                        required="" />
+                    <br />
+                    <button type="submit" onClick={this.constructNewUser}>
+                        Register
                 </button>
-                <button type="submit" onClick={this.handleLogin}>
-                    Sign In
+                    <button type="submit" onClick={this.handleLogin}>
+                        Sign In
                 </button>
-            </form>
+                </form>
+            </div>
         )
     }
 }

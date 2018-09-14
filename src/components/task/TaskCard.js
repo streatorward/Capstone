@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import React, { Component } from "react"
 
 
+
 export default class TaskCard extends Component {
 
     state = {
@@ -9,9 +10,9 @@ export default class TaskCard extends Component {
 
     }
 
-    changeCompleted = () => { 
-    let complete = { complete: this.state.task.complete }
-    console.log(complete)
+    changeCompleted = () => {
+        let complete = { complete: this.state.task.complete }
+        console.log(complete)
         if (this.state.task.complete) {
             complete = { complete: false }
         } else {
@@ -33,25 +34,23 @@ export default class TaskCard extends Component {
 
     render() {
         return (
-            <div key={this.state.task.id} className="taskCard">
-                <section className="tasks">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">
-                                <p>{this.props.task.taskName}</p>
-                                <p>{this.props.task.taskDetail}</p>
-                                <p>{this.props.task.taskRecurring}</p>
-                                <Link className="nav-link" to={`/tasks/edit/${this.props.task.id}`}>Edit</Link>
-                                <button type="button" className="btn btn-success"
-                                    onClick={() => this.props.deleteTask(this.props.task.id, "tasks")}
-                                >Delete</button>
-                                    <input onClick={this.changeCompleted} className="taskCheckbox" name="complete" type="checkbox" />
-                          
-                            </h5>
-                        </div>
-                    </div>
-                </section>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{this.props.task.taskName}</h5>
+                    <p class="card-text">{this.props.task.taskDetail}</p>
+                    <p class="card-text">{this.props.task.taskRecurring}</p>
+                    <button>
+                        <Link className="nav-link" to={`/tasks/edit/${this.props.task.id}`}><i class="far fa-edit"></i></Link></button>
+                    <button onClick={this.changeCompleted} className="taskCheckbox" name="complete" type="button"><i class="far fa-check-square"></i></button>
+                    <button type="button" 
+                        onClick={() => this.props.deleteTask(this.props.task.id, "tasks")} 
+                    ><i class="far fa-trash-alt"></i></button>
+                </div>
             </div>
         )
     }
 }
+
+
+
+

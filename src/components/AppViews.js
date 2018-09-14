@@ -2,6 +2,7 @@ import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
 import Login from './Login'
 import DataManager from '../data/DataManager'
+import "bootstrap/dist/css/bootstrap.min.css"
 // import "./AppViews.css"
 
 import TaskForm from './task/TaskForm'
