@@ -4,12 +4,16 @@ import React, { Component } from "react"
 
 
 export default class TaskEdit extends Component {
-    state = {
-        name: "",
-        detail: "",
-        recurring: "",
-    }
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: props.name || '',
+            detail: props.detail || '',
+            recurring: "",
+        }
+    }
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -39,19 +43,19 @@ export default class TaskEdit extends Component {
                     <div className="form-group">
                         <label htmlFor="taskName">Task name</label>
                         <input type="text" required={true}
-                               className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
-                               id="name"
-                               placeholder="Task Name"
-                               defaultValue={this.state.taskName} />
+                            className="form-control"
+                            onChange={this.handleFieldChange.bind(this)}
+                            id="name"
+                            placeholder="Task Name"
+                            defaultValue={this.state.taskName} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskDetail">Task Detail</label>
                         <input type="text" required={true}
-                               className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
-                               id="detail" placeholder="Task Detail"
-                               defaultValue={this.state.taskDetail}/>
+                            className="form-control"
+                            onChange={this.handleFieldChange.bind(this)}
+                            id="detail" placeholder="Task Detail"
+                            defaultValue={this.state.taskDetail} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskRecurring">Recurring: </label>

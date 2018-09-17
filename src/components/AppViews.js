@@ -96,7 +96,9 @@ export default class AppViews extends Component {
                     }} />
                     <Route exact path="/tasks/edit/:taskId(\d+)" render={(props) => {
                         return <TaskEdit {...props}
-                            editTask={this.editTask} />
+                            tasks={this.state.tasks}
+                            editTask={this.editTask}
+                        />
                     }} />
                 </div>
             </React.Fragment>
