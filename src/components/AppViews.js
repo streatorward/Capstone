@@ -30,7 +30,7 @@ export default class AppViews extends Component {
         .then(tasks => this.setState({
             tasks: tasks,
         }))
-    editTask = (task, id, link) => DataManager.put(task, id, link)
+    editTask = (task, id, link) => DataManager.patch(task, id, link)
         .then(() => DataManager.getAll("tasks"))
         .then(tasks => this.setState({
             tasks: tasks
@@ -92,13 +92,18 @@ export default class AppViews extends Component {
                     }} />
                     <Route exact path="/tasks/new" render={(props) => {
                         return <TaskForm {...props}
-                            addTask={this.addTask} />
+                            addTask={this.addTask}
+                        />
                     }} />
                     <Route exact path="/tasks/edit/:taskId(\d+)" render={(props) => {
-                        return <TaskEdit {...props}
-                            tasks={this.state.tasks}
-                            editTask={this.editTask}
-                        />
+                        if (this.isAuthenticated()) {
+                            return <TaskEdit {...props}
+                                tasks={this.state.tasks}
+                                editTask={this.editTask}
+                            />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
                     }} />
                 </div>
             </React.Fragment>
