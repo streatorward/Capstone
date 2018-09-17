@@ -30,7 +30,7 @@ export default class AppViews extends Component {
         .then(tasks => this.setState({
             tasks: tasks,
         }))
-    editTask = (task, id, link) => DataManager.patch(task, id, link)
+    editTask = (task, id, link) => DataManager.put(task, id, link)
         .then(() => DataManager.getAll("tasks"))
         .then(tasks => this.setState({
             tasks: tasks

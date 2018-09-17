@@ -46,7 +46,7 @@ export default Object.create(null, {
         }
     },
     patch: {
-        value: function (tasks, id, link) {
+        value: function (link, tasks, id) {
             return fetch(`${remoteURL}/${link}/${id}`, {
                 method: "PATCH",
                 headers: {
@@ -54,7 +54,6 @@ export default Object.create(null, {
                 },
                 body: JSON.stringify(tasks)
             }).then(e => e.json())
-                .then(() => this.getAll(link))
         }
     },
     findUser: {
