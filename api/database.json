@@ -1,58 +1,10 @@
 {
   "tasks": [
     {
-      "taskName": "test 1",
-      "taskDetail": "test 1",
-      "taskRecurring": "daily",
-      "activeUser": 1,
-      "completed": false,
-      "id": 1,
-      "complete": false
-    },
-    {
-      "taskName": "test 2",
-      "taskDetail": "test 2",
+      "taskName": "test 1112",
+      "taskDetail": "test 1112",
       "taskRecurring": "weekly",
-      "activeUser": 1,
-      "completed": false,
-      "id": 2,
-      "complete": false
-    },
-    {
-      "taskName": "test 3",
-      "taskDetail": "test 3",
-      "taskRecurring": "monthly",
-      "activeUser": 1,
-      "completed": false,
-      "id": 3,
-      "complete": false
-    },
-    {
-      "taskName": "test 11",
-      "taskDetail": "test12",
-      "taskRecurring": "weekly",
-      "activeUser": 1,
-      "completed": false,
-      "id": 4,
-      "complete": false
-    },
-    {
-      "taskName": "Streator Ward",
-      "taskDetail": "test 4",
-      "taskRecurring": "monthly",
-      "activeUser": 1,
-      "completed": false,
-      "id": 5,
-      "complete": false
-    },
-    {
-      "taskName": "test v3",
-      "taskDetail": "test12",
-      "taskRecurring": "daily",
-      "activeUser": 1,
-      "completed": false,
-      "id": 6,
-      "complete": false
+      "id": 1
     }
   ],
   "users": [

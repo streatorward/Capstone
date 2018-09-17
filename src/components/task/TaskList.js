@@ -18,7 +18,7 @@ export default class TaskList extends Component {
             <React.Fragment>
                 <div className="taskButton">
                     <button type="button"
-                        className="btn btn-success"
+                        className="btn"
                         onClick={() => {
                             this.props.history.push("/tasks/new")
                         }

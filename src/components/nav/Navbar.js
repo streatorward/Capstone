@@ -9,16 +9,16 @@ class NavBar extends Component {
     render() {
         return (
             
-            <nav className=".navbar.navbar-default.navbar-static-top light-blue flex-md-nowrap p-0 shadow navbar">
+            <nav className=".navbar.navbar-default.navbar-static-top light-blue flex-md-nowrap p-0 navbar">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <Link className="nav-link text-success" to="/tasks">Things To Do</Link>
+                        <Link className="nav-link" to="/tasks">Things To Do</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link text-success" to="/completed">Completed</Link>
+                        <Link className="nav-link" to="/completed">Completed</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link text-success" to="/" onClick={this.logout}>Logout</Link>
+                        <Link className="nav-link" to="/" onClick={this.logout}>Logout</Link>
                     </li>
                 </ul>
             </nav>

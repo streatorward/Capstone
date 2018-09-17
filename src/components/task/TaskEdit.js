@@ -4,12 +4,16 @@ import React, { Component } from "react"
 
 
 export default class TaskEdit extends Component {
-    state = {
-        name: "",
-        detail: "",
-        recurring: "",
-    }
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: "",
+            detail: "",
+            recurring: "",
+        }
+    }
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
         const stateToChange = {}
@@ -24,14 +28,20 @@ export default class TaskEdit extends Component {
     constructNewTask = evt => {
         evt.preventDefault()
         const task = {
-            taskName: this.state.name,
-            taskDetail: this.state.detail,
-            taskRecurring: this.state.recurring,
+            taskName: this.state.taskName,
+            taskDetail: this.state.taskDetail,
+            taskRecurring: this.state.taskRecurring,
         }
         const taskEditId = parseInt(this.props.match.params.taskId, 0)
         // Create the task and redirect user to task list
         this.props.editTask(task, taskEditId, "tasks").then(() => this.props.history.push("/tasks"))
     }
+
+    componentDidMount(){
+        const task = this.props.tasks.find(a => a.id === parseInt(this.props.match.params.taskId, 0)) || {}
+        this.setState({...task})
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -39,30 +49,30 @@ export default class TaskEdit extends Component {
                     <div className="form-group">
                         <label htmlFor="taskName">Task name</label>
                         <input type="text" required={true}
-                               className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
-                               id="name"
-                               placeholder="Task Name"
-                               defaultValue={this.state.taskName} />
+                            className="form-control"
+                            onChange={this.handleFieldChange}
+                            id="taskName"
+                            placeholder="Task Name" 
+                            defaultValue={this.state.taskName}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskDetail">Task Detail</label>
                         <input type="text" required={true}
-                               className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
-                               id="detail" placeholder="Task Detail"
-                               defaultValue={this.state.taskDetail}/>
+                            className="form-control"
+                            onChange={this.handleFieldChange}
+                            id="taskDetail" placeholder="Task Detail"
+                            defaultValue={this.state.taskDetail} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskRecurring">Recurring: </label>
-                        <select defaultValue="" onChange={this.handleFieldChange} id="recurring">
+                        <select value={this.state.taskRecurring} onChange={this.handleFieldChange} id="taskRecurring">
                             <option value="">Select:</option>
                             <option value="daily">Daily</option>
                             <option value="weekly">Weekly</option>
                             <option value="monthly">Monthly</option>
                         </select>
                     </div>
-                    <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Submit</button>
+                    <button type="submit" onClick={this.constructNewTask} className="btn">Submit</button>
                 </form>
             </React.Fragment>
         )
