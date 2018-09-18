@@ -7,9 +7,8 @@ class NavBar extends Component {
         sessionStorage.clear();
     }
     render() {
-        return (
-            
-            <nav className=".navbar.navbar-default.navbar-static-top light-blue flex-md-nowrap p-0 navbar">
+        return (      
+            <nav id="navbar" className=".navbar .navbar-static-top flex-md-nowrap">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
                         <Link className="nav-link" to="/tasks">Things To Do</Link>
@@ -17,9 +16,11 @@ class NavBar extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" to="/completed">Completed</Link>
                     </li>
+                    <div className="logBtn">
                     <li className="nav-item">
                         <Link className="nav-link" to="/" onClick={this.logout}>Logout</Link>
                     </li>
+                    </div>
                 </ul>
             </nav>
         )

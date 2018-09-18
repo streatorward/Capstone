@@ -5,3 +5,15 @@ body {
 
 }
 
+.nav-pills {
+    background: transparent;
+}
+
+.nav-link {
+    color: black;
+}
+
+.logBtn {
+    display: flex;
+    flex-direction: row-reverse;
+}

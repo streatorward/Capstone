@@ -1,3 +1,16 @@
 .taskColumn {
     width: 15rem;
+    align-content: center;
+}
+
+.taskColumn {
+    width: 25em;
+}
+
+.allTasks {
+    align-content: center;
+}
+
+.far {
+    color: white;
 }

@@ -59,32 +59,37 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div class="loginForm">
-                <form onSubmit={this.handleLogin}>
-                    <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-                    <label htmlFor="email">
-                        Email address
-                </label>
-                    <input onChange={this.handleFieldChange} type="email"
-                        id="email"
-                        placeholder="Email address"
-                        required="" autoFocus="" />
-                    <br />
-                    <label htmlFor="password">
-                        Password
-                </label>
-                    <input onChange={this.handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Password"
-                        required="" />
-                    <br />
-                    <button type="submit" onClick={this.constructNewUser}>
-                        Register
-                </button>
-                    <button type="submit" onClick={this.handleLogin}>
-                        Sign In
-                </button>
-                </form>
+            <div className="loginWrapper">
+                <img src="slackerz.png" className="App-logo" alt="logo" />
+                <br />
+                <div class="loginForm" >
+                    <form onSubmit={this.handleLogin}>
+
+                        <label htmlFor="email">
+
+                        </label>
+                        <input onChange={this.handleFieldChange} type="email"
+                            id="email"
+                            placeholder="Email"
+                            required="" />
+                        <br />
+                        <label htmlFor="password">
+                        </label>
+                        <input onChange={this.handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Password"
+                            required="" />
+                        <br />
+                        <div className="buttonRow">
+                                <button id="btn" class="btn btn-dark" type="submit" onClick={this.constructNewUser}>
+                                    Register 
+                        </button>
+                                <button id="btn" class="btn btn-dark" type="submit" onClick={this.handleLogin}>
+                                    Sign In
+                        </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }
