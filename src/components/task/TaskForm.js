@@ -13,7 +13,7 @@ export default class TaskForm extends Component {
             name: "",
             detail: "",
             recurring: "",
-            // activeUser: "",
+            activeUser: "",
             completed: false
         }
     }

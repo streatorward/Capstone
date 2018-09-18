@@ -12,6 +12,8 @@ export default class TaskEdit extends Component {
             name: "",
             detail: "",
             recurring: "",
+            activeUser: "",
+            complete: this.props.tasks.completed
         }
     }
     // Update state whenever an input field is edited
@@ -31,15 +33,20 @@ export default class TaskEdit extends Component {
             taskName: this.state.taskName,
             taskDetail: this.state.taskDetail,
             taskRecurring: this.state.taskRecurring,
+            activeUser: JSON.parse(sessionStorage.getItem("activeUser")).id,
         }
         const taskEditId = parseInt(this.props.match.params.taskId, 0)
+        console.log(this.props.tasks)
         // Create the task and redirect user to task list
-        this.props.editTask(task, taskEditId, "tasks").then(() => this.props.history.push("/tasks"))
+        if (this.props.tasks[0].complete === false) {
+            this.props.editTask(task, taskEditId, "tasks").then(() => this.props.history.push("/tasks"))
+        } else {
+            this.props.editTask(task, taskEditId, "tasks").then(() => this.props.history.push("/completed"))
+        }
     }
-
-    componentDidMount(){
+    componentDidMount() {
         const task = this.props.tasks.find(a => a.id === parseInt(this.props.match.params.taskId, 0)) || {}
-        this.setState({...task})
+        this.setState({ ...task })
     }
 
     render() {
@@ -52,8 +59,8 @@ export default class TaskEdit extends Component {
                             className="form-control"
                             onChange={this.handleFieldChange}
                             id="taskName"
-                            placeholder="Task Name" 
-                            defaultValue={this.state.taskName}/>
+                            placeholder="Task Name"
+                            defaultValue={this.state.taskName} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="taskDetail">Task Detail</label>

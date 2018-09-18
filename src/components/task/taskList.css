@@ -5,3 +5,10 @@
 
 }
 
+.taskWrapper {
+    display: flex;
+    flex-direction: column;
+    background-image: url(http://i.imgur.com/3WW8yqt.jpg);
+    height: 100vh;
+    align-content: center;
+}

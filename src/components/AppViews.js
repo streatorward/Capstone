@@ -3,8 +3,6 @@ import React, { Component } from "react"
 import Login from './Login'
 import DataManager from '../data/DataManager'
 import "bootstrap/dist/css/bootstrap.min.css"
-// import "./AppViews.css"
-
 import TaskForm from './task/TaskForm'
 import TaskList from './task/TaskList'
 import TaskEdit from './task/TaskEdit'
@@ -12,7 +10,6 @@ import CompletedTask from './task/CompletedTask'
 
 
 export default class AppViews extends Component {
-
 
     isAuthenticated = () => sessionStorage.getItem("activeUser") !== null
 
@@ -45,8 +42,6 @@ export default class AppViews extends Component {
         .then(tasks => this.setState({
             tasks: tasks
         }))
-
-
     componentDidMount() {
         const _state = {}
         DataManager.getAll("tasks").then(tasks => _state.tasks = tasks)
@@ -63,11 +58,6 @@ export default class AppViews extends Component {
                         return <Login {...props}
                             addUser={this.addUser} />
                     }} />
-
-                    {/* <Route path="/login" render={(props) => {
-                        return <Login {...props}
-                            addUser={this.addUser} />
-                    }} /> */}
                     <Route exact path="/tasks" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <TaskList {...props}
@@ -91,9 +81,13 @@ export default class AppViews extends Component {
                         }
                     }} />
                     <Route exact path="/tasks/new" render={(props) => {
-                        return <TaskForm {...props}
-                            addTask={this.addTask}
-                        />
+                        if (this.isAuthenticated()) {
+                            return <TaskForm {...props}
+                                addTask={this.addTask}
+                            />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
                     }} />
                     <Route exact path="/tasks/edit/:taskId(\d+)" render={(props) => {
                         if (this.isAuthenticated()) {
