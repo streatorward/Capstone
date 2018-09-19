@@ -61,5 +61,5 @@ export default Object.create(null, {
             return fetch(`http://localhost:5003/users?inputEmail=${email}&inputPassword=${password}`)
                 .then(response => response.json())
         }
-    }
+    },
 })

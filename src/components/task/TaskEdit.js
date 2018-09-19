@@ -36,7 +36,6 @@ export default class TaskEdit extends Component {
             activeUser: JSON.parse(sessionStorage.getItem("activeUser")).id,
         }
         const taskEditId = parseInt(this.props.match.params.taskId, 0)
-        console.log(this.props.tasks)
         // Create the task and redirect user to task list
         if (this.props.tasks[0].complete === false) {
             this.props.editTask(task, taskEditId, "tasks").then(() => this.props.history.push("/tasks"))
