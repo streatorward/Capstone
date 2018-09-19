@@ -81,10 +81,10 @@ export default class Login extends Component {
                             required="" />
                         <br />
                         <div className="buttonRow">
-                                <button id="btn" class="btn btn-dark" type="submit" onClick={this.constructNewUser}>
+                                <button id="btn" className="btn btn-dark" type="submit" onClick={this.constructNewUser}>
                                     Register 
                         </button>
-                                <button id="btn" class="btn btn-dark" type="submit" onClick={this.handleLogin}>
+                                <button id="btn" className="btn btn-dark" type="submit" onClick={this.handleLogin}>
                                     Sign In
                         </button>
                         </div>

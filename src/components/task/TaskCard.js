@@ -37,10 +37,10 @@ export default class TaskCard extends Component {
                     <p className="card-text">{this.props.task.taskDetail}</p>
                     <p className="card-text">{this.props.task.taskRecurring}</p>
                     <div className="buttonLayout">
-                        <button class="btn btn-secondary btn-sm">
+                        <button className="btn btn-secondary btn-sm">
                             <Link className="nav-link" to={`/tasks/edit/${this.props.task.id}`}><i className="far fa-edit"></i></Link></button>
-                        <button onClick={this.changeCompleted} class="btn btn-secondary btn-sm" name="complete" type="button"><i className="far fa-check-square"></i></button>
-                        <button class="btn btn-secondary btn-sm" type="button"
+                        <button onClick={this.changeCompleted} className="btn btn-secondary btn-sm" name="complete" type="button"><i className="far fa-check-square"></i></button>
+                        <button className="btn btn-secondary btn-sm" type="button"
                             onClick={() => this.props.deleteTask(this.props.task.id, "tasks")}
                         ><i className="far fa-trash-alt"></i></button>
                     </div>

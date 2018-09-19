@@ -10,10 +10,12 @@ import NavBar from '../nav/Navbar';
 export default class TaskList extends Component {
 
     render() {
-        const filteredTasks = this.props.tasks.filter(task => task.complete !== true)
-        const dailyTasks = filteredTasks.filter(task => task.taskRecurring === "daily")
-        const weeklyTasks = filteredTasks.filter(task => task.taskRecurring === "weekly")
-        const monthlyTasks = filteredTasks.filter(task => task.taskRecurring === "monthly")
+        let currentUser = JSON.parse(sessionStorage.getItem("activeUser"))
+        const filteredTasks = this.props.tasks.filter(task => task.activeUser === currentUser.id)
+        const completedTasks = filteredTasks.filter(task => task.complete !== true)
+        const dailyTasks = completedTasks.filter(task => task.taskRecurring === "daily")
+        const weeklyTasks = completedTasks.filter(task => task.taskRecurring === "weekly")
+        const monthlyTasks = completedTasks.filter(task => task.taskRecurring === "monthly")
         return (
             <React.Fragment>
                 <div className="taskWrapper">
@@ -51,7 +53,7 @@ export default class TaskList extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>     
             </React.Fragment>
         )
     }
