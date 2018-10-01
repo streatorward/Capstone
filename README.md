@@ -1,1 +1,1 @@
-![ERD](public/Capstone ERD.jpeg)
+![ERD](https://github.com/streatorward/Capstone/blob/master/Capstone%20ERD.jpeg)
