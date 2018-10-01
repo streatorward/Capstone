@@ -21,10 +21,6 @@ export default class Login extends Component {
     handleLogin = (e) => {
         e.preventDefault()
 
-        /*
-            For now, just store the email and password that
-            the customer enters into local storage.
-        */
         let email = this.state.email;
         let password = this.state.password;
         DataManager.getAll("users")

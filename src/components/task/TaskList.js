@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import TaskCard from './TaskCard'
 import "bootstrap/dist/css/bootstrap.min.css"
-import "./taskCard.css"
+// import "./taskCard.css"
 import "./taskList.css"
 import NavBar from '../nav/Navbar';
 
@@ -19,18 +19,25 @@ export default class TaskList extends Component {
         return (
             <React.Fragment>
                 <div className="taskWrapper">
-                <NavBar/>
-                    <div className="taskButton">
-                        <button type="button"
-                            className="btn"
-                            onClick={() => {
-                                this.props.history.push("/tasks/new")
-                            }
-                            }>
-                            Add task
+                    <img src="slackerz.png" className="App-logo" alt="logo" />
+                    <NavBar />
+                    <div className="addButton">
+                        <div className="taskButton">
+                            <button type="button"
+                                id="addButton"
+                                className="btn btn-secondary btn-lg"
+                                onClick={() => {
+                                    this.props.history.push("/tasks/new")
+                                }
+                                }>
+                                Add task
                     </button>
+                        </div>
                         <div className="allTasks">
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Daily</h1>
+                            </div>
                                 {
                                     dailyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
@@ -38,6 +45,9 @@ export default class TaskList extends Component {
                                 }
                             </div>
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Weekly</h1>
+                            </div>
                                 {
                                     weeklyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
@@ -45,6 +55,9 @@ export default class TaskList extends Component {
                                 }
                             </div>
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Monthly</h1>
+                            </div>
                                 {
                                     monthlyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
@@ -53,7 +66,7 @@ export default class TaskList extends Component {
                             </div>
                         </div>
                     </div>
-                </div>     
+                </div>
             </React.Fragment>
         )
     }

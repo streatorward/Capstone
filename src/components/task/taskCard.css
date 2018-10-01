@@ -18,3 +18,11 @@
 .card-body {
     fill-opacity: initial;
 }
+
+.btn {
+    margin: 8px;
+}
+
+.buttonLayout {
+    text-align: right;
+}

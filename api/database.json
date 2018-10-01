@@ -10,23 +10,6 @@
       "complete": false
     },
     {
-      "taskName": "test 2",
-      "taskDetail": "test 2",
-      "taskRecurring": "weekly",
-      "activeUser": 4,
-      "completed": false,
-      "id": 5,
-      "complete": false
-    },
-    {
-      "taskName": "test 3",
-      "taskDetail": "test 3",
-      "taskRecurring": "monthly",
-      "activeUser": 4,
-      "completed": false,
-      "id": 6
-    },
-    {
       "taskName": "test",
       "taskDetail": "test 1",
       "taskRecurring": "monthly",
@@ -45,12 +28,93 @@
       "complete": false
     },
     {
-      "taskName": "test1",
-      "taskDetail": "test1",
+      "taskName": "8/8 Uldir Normal Clear",
+      "taskDetail": "This will be a partial Guild run, will need additional Heals and DPS",
+      "taskRecurring": "weekly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 11,
+      "complete": false
+    },
+    {
+      "taskName": "6/8 Uldir Heroic Clear",
+      "taskDetail": "This will be a partial Guild run, will need additional Heals and DPS",
+      "taskRecurring": "weekly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 12
+    },
+    {
+      "taskName": "Pay Rent",
+      "taskDetail": "This is due by the 5th of each month",
+      "taskRecurring": "monthly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 13
+    },
+    {
+      "taskName": "Run one Random Heroic Dungeon",
+      "taskDetail": "Need to run at least on a day for easy additional Azerite",
       "taskRecurring": "daily",
       "activeUser": 4,
       "completed": false,
-      "id": 10
+      "id": 14
+    },
+    {
+      "taskName": "Complete Daily Cashe",
+      "taskDetail": "One up each day for a specific zone, great and easy source of gear, azerite, reputation, or resources.",
+      "taskRecurring": "daily",
+      "activeUser": 4,
+      "completed": false,
+      "id": 15
+    },
+    {
+      "taskName": "Pay for Utilities ",
+      "taskDetail": "Electric, Water, and Internet are all do on the 5th as well",
+      "taskRecurring": "monthly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 16
+    },
+    {
+      "taskName": "Credit Card Payment",
+      "taskDetail": "Anything put on Southwest card must be paid off by the 15th of each month",
+      "taskRecurring": "monthly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 17
+    },
+    {
+      "taskName": "Run a Mythic +10 Dungeon",
+      "taskDetail": "+10 Dungeons have the best chance for higher ilvl gear from the Tuesday reset chest",
+      "taskRecurring": "weekly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 18
+    },
+    {
+      "taskName": "Give Miller his Heart worm Medication",
+      "taskDetail": "The little dude must take this on the first of each month",
+      "taskRecurring": "monthly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 19
+    },
+    {
+      "taskName": "Fill up Water Bottle before School",
+      "taskDetail": "I've been wasting a lot of plastic bottles and need to get in the habit of bringing my own from home each day ",
+      "taskRecurring": "daily",
+      "activeUser": 4,
+      "completed": false,
+      "id": 20
+    },
+    {
+      "taskName": "Put in Work availability ",
+      "taskDetail": "Need to work minimum 30 hours each week, will have to plan around school functions, availability need to be submitted by Friday at midnight",
+      "taskRecurring": "weekly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 21
     }
   ],
   "users": [

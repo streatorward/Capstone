@@ -7,6 +7,7 @@ body {
 
 .nav-pills {
     background: transparent;
+    text-align: center;
 }
 
 .nav-link {
@@ -16,4 +17,8 @@ body {
 .logBtn {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.nav {
+    justify-content: center;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-// import "./Task.css"
-
+import "./taskList.css"
 
 
 export default class TaskEdit extends Component {
@@ -51,35 +50,37 @@ export default class TaskEdit extends Component {
     render() {
         return (
             <React.Fragment>
-                <form className="TaskForm">
-                    <div className="form-group">
-                        <label htmlFor="taskName">Task name</label>
-                        <input type="text" required={true}
-                            className="form-control"
-                            onChange={this.handleFieldChange}
-                            id="taskName"
-                            placeholder="Task Name"
-                            defaultValue={this.state.taskName} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="taskDetail">Task Detail</label>
-                        <input type="text" required={true}
-                            className="form-control"
-                            onChange={this.handleFieldChange}
-                            id="taskDetail" placeholder="Task Detail"
-                            defaultValue={this.state.taskDetail} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="taskRecurring">Recurring: </label>
-                        <select value={this.state.taskRecurring} onChange={this.handleFieldChange} id="taskRecurring">
-                            <option value="">Select:</option>
-                            <option value="daily">Daily</option>
-                            <option value="weekly">Weekly</option>
-                            <option value="monthly">Monthly</option>
-                        </select>
-                    </div>
-                    <button type="submit" onClick={this.constructNewTask} className="btn">Submit</button>
-                </form>
+                <div className="taskWrapper">
+                    <form className="TaskForm">
+                        <div className="form-group">
+                            <label htmlFor="taskName">Task name</label>
+                            <input type="text" required={true}
+                                className="form-control"
+                                onChange={this.handleFieldChange}
+                                id="taskName"
+                                placeholder="Task Name"
+                                defaultValue={this.state.taskName} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="taskDetail">Task Detail</label>
+                            <input type="text" required={true}
+                                className="form-control"
+                                onChange={this.handleFieldChange}
+                                id="taskDetail" placeholder="Task Detail"
+                                defaultValue={this.state.taskDetail} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="taskRecurring">Recurring: </label>
+                            <select value={this.state.taskRecurring} onChange={this.handleFieldChange} id="taskRecurring">
+                                <option value="">Select:</option>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+                        <button type="submit" onClick={this.constructNewTask} className="btn">Submit</button>
+                    </form>
+                </div>
             </React.Fragment>
         )
     }

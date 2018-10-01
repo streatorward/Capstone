@@ -19,10 +19,14 @@ export default class CompletedTask extends Component {
         return (
             <React.Fragment>
                 <div className="taskWrapper">
+                <img src="slackerz.png" className="App-logo" alt="logo" />
                     <NavBar />
                     {
                         <div className="allTasks">
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Daily</h1>
+                            </div>
                                 {
                                     dailyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
@@ -30,6 +34,9 @@ export default class CompletedTask extends Component {
                                 }
                             </div>
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Weekly</h1>
+                            </div>
                                 {
                                     weeklyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
@@ -37,6 +44,9 @@ export default class CompletedTask extends Component {
                                 }
                             </div>
                             <div className="taskColumn">
+                            <div className="titles">
+                            <h1>Monthly</h1>
+                            </div>
                                 {
                                     monthlyTasks.map(task =>
                                         <TaskCard key={task.id} task={task} {...this.props} />
