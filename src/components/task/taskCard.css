@@ -14,3 +14,7 @@
 .far {
     color: white;
 }
+
+.card-body {
+    fill-opacity: initial;
+}

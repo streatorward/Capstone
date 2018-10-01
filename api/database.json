@@ -10,22 +10,47 @@
       "complete": false
     },
     {
-      "taskName": "33333333333",
-      "taskDetail": "3333333333",
-      "taskRecurring": "daily",
-      "activeUser": 3,
+      "taskName": "test 2",
+      "taskDetail": "test 2",
+      "taskRecurring": "weekly",
+      "activeUser": 4,
       "completed": false,
-      "id": 2,
+      "id": 5,
       "complete": false
     },
     {
-      "taskName": "333333333333333333333333333333333333333333",
-      "taskDetail": "3333333333333333333333333333333333333333333333",
-      "taskRecurring": "weekly",
+      "taskName": "test 3",
+      "taskDetail": "test 3",
+      "taskRecurring": "monthly",
+      "activeUser": 4,
+      "completed": false,
+      "id": 6
+    },
+    {
+      "taskName": "test",
+      "taskDetail": "test 1",
+      "taskRecurring": "monthly",
       "activeUser": 3,
       "completed": false,
-      "id": 3,
+      "id": 7,
       "complete": false
+    },
+    {
+      "taskName": "walk my dog",
+      "taskDetail": "make sure he does 1 and 2",
+      "taskRecurring": "daily",
+      "activeUser": 5,
+      "completed": false,
+      "id": 9,
+      "complete": false
+    },
+    {
+      "taskName": "test1",
+      "taskDetail": "test1",
+      "taskRecurring": "daily",
+      "activeUser": 4,
+      "completed": false,
+      "id": 10
     }
   ],
   "users": [
@@ -38,6 +63,16 @@
       "email": "hello@gmail.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "email": "streatorward@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "email": "testtest",
+      "password": "testtest",
+      "id": 5
     }
   ]
 }
